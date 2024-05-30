@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Heading name='Wyatt Earp' street='4242 Main St.' city='Tombstone' state='AZ' zip='84492' email='sherriffearp@az.gov' />
+
       <hr/>
     </>
   )
