@@ -17,14 +17,14 @@ const headingInfo = {
 }
 
 export default function Heading() {
-  const [write, setWrite] = useState(false);
+  const [writing, setWriting] = useState(false);
   const [headingData, setHeadingData] = useState(headingInfo)
 
   let icon = icons.edit;
-  if (write) icon = icons.save;
+  if (writing) icon = icons.save;
 
   function changeWriting() {
-    write === false ? setWrite(true) : setWrite(false);
+    writing === false ? setWriting(true) : setWriting(false);
   }
 
   function editName(e) {
@@ -54,7 +54,7 @@ export default function Heading() {
   return (
     <header>
       <section className="content">
-        {!write ? (
+        {!writing ? (
           <>
             <p>{headingData.street}</p>
             <p>{headingData.cityStateZip}</p>
