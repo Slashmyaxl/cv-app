@@ -20,6 +20,7 @@ input {
   border: 1px dotted gray;
   font-size: 1rem;
   width: 250px;
+  padding: 1px 2px;
 }
 
 input.big {

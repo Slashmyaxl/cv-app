@@ -1,6 +1,5 @@
 import Button from "./Button";
-import saveIcon from "../assets/content-save.svg";
-import editIcon from "../assets/square-edit-outline.svg";
+import icons from "../icons";
 import { useState } from "react";
 import "../styles/Heading.css";
 
@@ -10,47 +9,68 @@ function Input({ text, className, onChange }) {
   );
 }
 
+const headingInfo = {
+  name: 'Wyatt Earp',
+  street: '4242 Main St.',
+  cityStateZip: 'Tombstone, AZ 84492',
+  email: 'sherrifearp@az.gov',
+}
+
 export default function Heading() {
   const [write, setWrite] = useState(false);
-  const [name, setName] = useState("Wyatt Earp");
-  const [street, setStreet] = useState("4242 Main St.");
-  const [cityStateZip, setCityStateZip] = useState("Tombstone, AZ 84492");
-  const [email, setEmail] = useState("sherriffearp@az.gov");
-  let iconSrc = editIcon;
-  write ? (iconSrc = saveIcon) : editIcon;
+  const [headingData, setHeadingData] = useState(headingInfo)
+
+  let icon = icons.edit;
+  if (write) icon = icons.save;
 
   function changeWriting() {
     write === false ? setWrite(true) : setWrite(false);
   }
 
-  const editName = (e) => setName(e.target.value);
+  function editName(e) {
+    let newHeading = headingData
+    newHeading = {...newHeading, name: e.target.value}
+    setHeadingData(newHeading);
+  }
 
-  const editStreet = (e) => setStreet(e.target.value);
+  function editStreet(e) {
+    let newHeading = headingData
+    newHeading = {...newHeading, street: e.target.value}
+    setHeadingData(newHeading);
+  }
 
-  const editCityStateZip = (e) => setCityStateZip(e.target.value);
+  function editCityStateZip(e) {
+    let newHeading = headingData
+    newHeading = {...newHeading, cityStateZip: e.target.value}
+    setHeadingData(newHeading);
+  }
 
-  const editEmail = (e) => setEmail(e.target.value);
+  function editEmail(e) {
+    let newHeading = headingData
+    newHeading = {...newHeading, email: e.target.value}
+    setHeadingData(newHeading);
+  }
 
   return (
     <header>
       <section className="content">
         {!write ? (
           <>
-            <p>{street}</p>
-            <p>{cityStateZip}</p>
-            <p>{email}</p>
-            <h1>{name}</h1>
+            <p>{headingData.street}</p>
+            <p>{headingData.cityStateZip}</p>
+            <p>{headingData.email}</p>
+            <h1>{headingData.name}</h1>
           </>
         ) : (
           <>
-            <Input onChange={editStreet} text={street} />
-            <Input onChange={editCityStateZip} text={cityStateZip} />
-            <Input onChange={editEmail} text={email} />
-            <Input onChange={editName} text={name} className="big" />
+            <Input onChange={editStreet} text={headingData.street} />
+            <Input onChange={editCityStateZip} text={headingData.cityStateZip} />
+            <Input onChange={editEmail} text={headingData.email} />
+            <Input onChange={editName} text={headingData.name} className="big" />
           </>
         )}
       </section>
-      <Button onClick={changeWriting} icon={iconSrc} />
+      <Button onClick={changeWriting} icon={icon} />
     </header>
   );
 }
