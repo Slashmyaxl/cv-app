@@ -3,9 +3,9 @@ import icons from "../icons";
 import { useState } from "react";
 import "../styles/Heading.css";
 
-function Input({ text, className, onChange }) {
+function Input({ text, className, onChange, placeholder }) {
   return (
-    <input value={text} className={className} onChange={onChange} type="text" />
+    <input value={text} className={className} onChange={onChange} type="text" placeholder={placeholder}/>
   );
 }
 
@@ -63,10 +63,10 @@ export default function Heading() {
           </>
         ) : (
           <>
-            <Input onChange={editStreet} text={headingData.street} />
-            <Input onChange={editCityStateZip} text={headingData.cityStateZip} />
-            <Input onChange={editEmail} text={headingData.email} />
-            <Input onChange={editName} text={headingData.name} className="big" />
+            <Input onChange={editStreet} text={headingData.street} placeholder='Street Address'/>
+            <Input onChange={editCityStateZip} text={headingData.cityStateZip} placeholder='City, State and Zip'/>
+            <Input onChange={editEmail} text={headingData.email} placeholder='email@domain.com'/>
+            <Input onChange={editName} text={headingData.name} className="big" placeholder='Full Name'/>
           </>
         )}
       </section>
