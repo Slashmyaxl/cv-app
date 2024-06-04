@@ -1,13 +1,10 @@
 import Button from "./Button";
 import icons from "../icons";
+import Input from "./Input"
 import { useState } from "react";
 import "../styles/Heading.css";
 
-function Input({ text, className, onChange, placeholder }) {
-  return (
-    <input value={text} className={className} onChange={onChange} type="text" placeholder={placeholder}/>
-  );
-}
+
 
 const headingInfo = {
   name: 'Wyatt Earp',
