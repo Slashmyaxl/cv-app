@@ -20,9 +20,6 @@ export default function Heading() {
   const [writing, setWriting] = useState(false);
   const [headingData, setHeadingData] = useState(headingInfo)
 
-  let icon = icons.edit;
-  if (writing) icon = icons.save;
-
   function changeWriting() {
     writing === false ? setWriting(true) : setWriting(false);
   }
@@ -70,7 +67,7 @@ export default function Heading() {
           </>
         )}
       </section>
-      <Button onClick={changeWriting} icon={icon} />
+      <Button onClick={changeWriting} icon={writing ? icons.save : icons.edit} />
     </header>
   );
 }
