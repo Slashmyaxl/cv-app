@@ -7,7 +7,8 @@ const education = {
     role: 'Bachelor of Science in Criminal Justice',
     highlights: [
             'Presided over Student Body junior and senior year, gaining skills in leadership',
-            'Completed 4-year apprenticeship with security division, demonstrating commitment to student safety'
+            'Completed 4-year apprenticeship with security division, demonstrating commitment to student safety',
+            ''
         ]
 }
 
@@ -17,7 +18,8 @@ const professional = {
     role: 'Sherrif',
     highlights: [
         'Maintain safety of citizenry within city of Tombstone',
-        'Outlaw neutralization'
+        'Outlaw neutralization',
+        ''
     ]
 }
 
