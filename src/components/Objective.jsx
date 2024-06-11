@@ -1,10 +1,12 @@
-import icons from '../icons.js'
-import Button from './Button.jsx';
-import { useState } from 'react';
+import icons from "../icons.js";
+import Button from "./Button.jsx";
+import { useState } from "react";
 
 export default function Objective() {
-    const [writing, setWriting] = useState(false);
-    const [objective, setObjective] = useState('Work as part of a development team in order advance programming skills.');
+  const [writing, setWriting] = useState(false);
+  const [objective, setObjective] = useState(
+    "Work as part of a development team in order advance programming skills.",
+  );
 
   function changeWriting() {
     writing === false ? setWriting(true) : setWriting(false);
@@ -12,17 +14,22 @@ export default function Objective() {
 
   return (
     <article>
-    <section className="content">
-    <h2>Objective</h2>
+      <section className="content">
+        <h2>Objective</h2>
         {!writing ? (
-        
-            <p>{objective}</p>
-            
+          <p>{objective}</p>
         ) : (
-            <textarea value={objective} onChange={(e) => setObjective(e.target.value)} placeholder='Professional or academic goal'/>
+          <textarea
+            value={objective}
+            onChange={(e) => setObjective(e.target.value)}
+            placeholder="Professional or academic goal"
+          />
         )}
-    </section>
-    <Button onClick={changeWriting} icon={writing ? icons.save : icons.edit} />
+      </section>
+      <Button
+        onClick={changeWriting}
+        icon={writing ? icons.save : icons.edit}
+      />
     </article>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 import Heading from './components/Heading'
-import Content from './components/Content'
+import Body from './components/Body'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Heading />
       <hr/>
-      <Content />
+      <Body />
     </>
   )
 }
