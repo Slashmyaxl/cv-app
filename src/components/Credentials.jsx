@@ -1,18 +1,7 @@
 import Button from "./Button";
 import icons from "../icons";
-import Input from "./Input";
+import { Input, InputList } from "./Inputs";
 import { useState } from "react";
-
-function InputList({ listItems, onChange }) {
-  return listItems.map((item) => (
-    <input
-      value={item.detail}
-      key={item.id}
-      placeholder="Add a Highlight"
-      onChange={(e) => onChange(item.id, e)}
-    />
-  ));
-}
 
 export default function Credential({ title, credentialItem }) {
   const [writing, setWriting] = useState(false);
@@ -56,8 +45,7 @@ export default function Credential({ title, credentialItem }) {
         <h2>{title}</h2>
         {!writing ? (
           <>
-            <p className="institution">{credential.institution}</p>
-            <span className="tenure">{credential.tenure}</span>
+            <p className="institution">{credential.institution} <span className="tenure">{credential.location} {credential.tenure}</span></p>
             <p>{credential.role}</p>
             <ul>
               {credential.highlights.map((item) => {

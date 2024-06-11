@@ -1,6 +1,6 @@
 import Button from "./Button";
 import icons from "../icons";
-import Input from "./Input";
+import { Input } from "./Inputs";
 import { useState } from "react";
 import "../styles/Heading.css";
 

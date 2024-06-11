@@ -1,8 +1,30 @@
 import Objective from "./Objective";
 import Credential from "./Credentials";
+import Projects from "./Projects";
+import Proficiencies from "./Proficiencies";
+
+export default function Content() {
+  return (
+    <main>
+      <section className="main-content">
+      <Objective />
+      <Credential title="Education" credentialItem={education} />
+      <Credential
+        title="Professional Experience"
+        credentialItem={professional}
+      />
+      <Projects />
+      </section>
+      <aside className="proficiencies">
+      <Proficiencies />
+      </aside>
+    </main>
+  );
+}
 
 const education = {
   institution: "University of Arizona",
+  location: "Tucson, AZ",
   tenure: "1860 - 1864",
   role: "Bachelor of Science in Criminal Justice",
   highlights: [
@@ -29,6 +51,7 @@ const education = {
 
 const professional = {
   institution: "Pima County Sherrif's Department",
+  location: "Tucson, AZ",
   tenure: "1869 - 1880",
   role: "Sherrif",
   highlights: [
@@ -50,16 +73,3 @@ const professional = {
     }
   ],
 };
-
-export default function Content() {
-  return (
-    <main>
-      <Objective />
-      <Credential title="Education" credentialItem={education} />
-      <Credential
-        title="Professional Experience"
-        credentialItem={professional}
-      />
-    </main>
-  );
-}

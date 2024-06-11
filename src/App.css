@@ -19,6 +19,7 @@ h2 {
 
 main {
   margin-top: 1.5rem;
+  display: flex;
 }
 
 main > article {
