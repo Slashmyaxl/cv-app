@@ -13,6 +13,12 @@ export default function Credential({ title, credentialItem }) {
     setCredential(newCredential);
   }
 
+  function changeLocation(e) {
+    let newCredential = credential;
+    newCredential = { ...newCredential, location: e.target.value };
+    setCredential(newCredential);
+  }
+
   function changeTenure(e) {
     let newCredential = credential;
     newCredential = { ...newCredential, tenure: e.target.value };
@@ -46,7 +52,7 @@ export default function Credential({ title, credentialItem }) {
         {!writing ? (
           <>
             <p className="institution">{credential.institution} <span className="tenure">{credential.location} {credential.tenure}</span></p>
-            <p>{credential.role}</p>
+            <p className="role">{credential.role}</p>
             <ul>
               {credential.highlights.map((item) => {
                 if (item.detail.length > 0) return <li key={item.id}>{item.detail}</li>;
@@ -59,16 +65,25 @@ export default function Credential({ title, credentialItem }) {
               onChange={changeInstitution}
               text={credential.institution}
               placeholder="Institution"
+              className="heading"
+            />
+            <Input
+              onChange={changeLocation}
+              text={credential.location}
+              placeholder="Location"
+              className="heading"
             />
             <Input
               onChange={changeTenure}
               text={credential.tenure}
               placeholder="Tenure"
+              className="heading"
             />
             <Input
               onChange={changeRole}
               text={credential.role}
               placeholder="Role"
+              className="big"
             />
             <InputList
               listItems={credential.highlights}

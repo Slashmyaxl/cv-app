@@ -19,7 +19,7 @@ export default function Objective() {
         {!writing ? (
           <p>{objective}</p>
         ) : (
-          <textarea
+          <input
             value={objective}
             onChange={(e) => setObjective(e.target.value)}
             placeholder="Professional or academic goal"

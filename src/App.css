@@ -4,8 +4,7 @@
 
 #root {
   min-width: max(320px, 100%);
-  max-width: 1280px;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem;
 }
 
 .content > * {
@@ -14,45 +13,72 @@
 
 h2 {
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  text-decoration: underline;
+  margin-bottom: 0.2rem;
 }
 
 main {
-  margin-top: 1.5rem;
   display: flex;
+  gap: 0.25rem;
 }
 
-main > article {
+header, main article, main aside {
   display: grid;
   grid-template-columns: 1fr 40px;
-  gap: 1rem;
-  min-width: 320px;
+  gap: 0.75rem;
+}
+
+main article, main aside {
+  margin-top: 0.65rem;
 }
 
 .icon {
-  width: 32px;
+  width: 30px;
 }
 
-header {
-  line-height: 1.3rem;
-  font-size: 1.1rem;
+ul {
+  margin-left: 1.25em;
+  text-align: left;
+  list-style: circle;
+  font-size: 0.9rem;
 }
 
-input, textarea {
+input {
   background: lightyellow;
   font-family: Oswald;
   padding: 0px 2px;
-  border: 1px solid gray;
-  border-bottom: none;
+  border: unset;
+  border-bottom: 1px solid lightblue;
   font-size: 1rem;
   min-width: 300px;
 }
 
-input.big {
-  font-size: 1.75em;
-  font-weight: bold;
+.main-content input {
+  width: 95%;
 }
 
-section input:last-child {
-  border-bottom: 1px solid gray;
+main input.big {
+  font-size: 1.25rem;
+}
+
+main input.heading {
+  font-size: 1.2rem;
+}
+
+.institution {
+  font-size: 1.2rem;
+  width: 100%;
+  display: flex;
+  column-gap: 0.2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.institution > span {
+  font-weight: normal;
+}
+
+.role {
+  font-weight: bold;
+  font-size: 1.1rem;
 }

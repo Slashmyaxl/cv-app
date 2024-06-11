@@ -1,6 +1,12 @@
 header {
-    display: grid;
-    grid-template-columns: 1fr 40px;
-    gap: 1rem;
-    min-width: 320px;
+    line-height: 1.3em;
 }
+
+input {
+    width: 50%;
+}
+
+input.big {
+    font-size: 1.75em;
+    font-weight: bold;
+  }

@@ -10,7 +10,7 @@ export default function Content() {
       <Objective />
       <Credential title="Education" credentialItem={education} />
       <Credential
-        title="Professional Experience"
+        title="Experience"
         credentialItem={professional}
       />
       <Projects />
