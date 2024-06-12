@@ -14,8 +14,14 @@ export default function Objective() {
 
   return (
     <article>
-      <section className="content">
+      <section className="heading">
         <h2>Objective</h2>
+        <Button
+        onClick={changeWriting}
+        icon={writing ? icons.save : icons.edit}
+      />
+      </section>
+      <section className="content">
         {!writing ? (
           <p>{objective}</p>
         ) : (
@@ -26,10 +32,6 @@ export default function Objective() {
           />
         )}
       </section>
-      <Button
-        onClick={changeWriting}
-        icon={writing ? icons.save : icons.edit}
-      />
     </article>
   );
 }

@@ -14,18 +14,36 @@
 h2 {
   text-transform: uppercase;
   text-decoration: underline;
-  margin-bottom: 0.2rem;
+  color: hsl(9, 91%, 35%)
 }
 
 main {
-  display: flex;
-  gap: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 1rem;
 }
 
-header, main article, main aside {
+header {
   display: grid;
   grid-template-columns: 1fr 40px;
   gap: 0.75rem;
+}
+
+article > .heading, aside > .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+article > .content {
+  max-width: 92%;
+  margin: 0.25rem 0;
+}
+
+.content .tenure {
+  opacity: 0.65;
+  font-size: 1rem;
 }
 
 main article, main aside {
@@ -40,7 +58,7 @@ ul {
   margin-left: 1.25em;
   text-align: left;
   list-style: circle;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 input {
@@ -50,12 +68,9 @@ input {
   border: unset;
   border-bottom: 1px solid lightblue;
   font-size: 1rem;
-  min-width: 300px;
-}
-
-.main-content input {
   width: 95%;
 }
+
 
 main input.big {
   font-size: 1.25rem;
@@ -69,9 +84,26 @@ main input.heading {
   font-size: 1.2rem;
   width: 100%;
   display: flex;
-  column-gap: 0.2rem;
+  column-gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+.institutional-info {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  width: 95%;
+}
+
+.institutional-info input {
+  width: 100%;
+  text-align: right;
+  padding-left: 4px;
+}
+
+.institutional-info input:first-child {
+  text-align: left;
 }
 
 .institution > span {
@@ -81,4 +113,16 @@ main input.heading {
 .role {
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+@media (max-width: 599px) {
+  main {
+    display: block;
+  }
+}
+
+@media print {
+  .icon {
+    display: none;
+  }
 }

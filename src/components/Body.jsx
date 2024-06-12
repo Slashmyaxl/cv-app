@@ -15,9 +15,7 @@ export default function Content() {
       />
       <Projects />
       </section>
-      <aside className="proficiencies">
       <Proficiencies />
-      </aside>
     </main>
   );
 }

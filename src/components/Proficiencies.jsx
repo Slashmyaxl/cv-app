@@ -61,9 +61,15 @@ export default function Proficiencies() {
   }
 
   return (
-    <>
-      <section className="content">
+    <aside className="proficiencies">
+      <section className="heading">
         <h2>Proficiencies</h2>
+        <Button
+        onClick={changeWriting}
+        icon={writing ? icons.save : icons.edit}
+      ></Button>
+      </section>
+      <section className="content">
         {!writing ? (
           <>
             <ul>
@@ -79,10 +85,6 @@ export default function Proficiencies() {
           </>
         )}
       </section>
-      <Button
-        onClick={changeWriting}
-        icon={writing ? icons.save : icons.edit}
-      ></Button>
-    </>
+    </aside>
   );
 }

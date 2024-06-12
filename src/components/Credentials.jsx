@@ -47,8 +47,14 @@ export default function Credential({ title, credentialItem }) {
 
   return (
     <article>
-      <section className="content">
+      <section className="heading">
         <h2>{title}</h2>
+        <Button
+        onClick={changeWriting}
+        icon={writing ? icons.save : icons.edit}
+        ></Button>
+      </section>
+      <section className="content">
         {!writing ? (
           <>
             <p className="institution">{credential.institution} <span className="tenure">{credential.location} {credential.tenure}</span></p>
@@ -61,6 +67,7 @@ export default function Credential({ title, credentialItem }) {
           </>
         ) : (
           <>
+            <div className="institutional-info">
             <Input
               onChange={changeInstitution}
               text={credential.institution}
@@ -79,6 +86,7 @@ export default function Credential({ title, credentialItem }) {
               placeholder="Tenure"
               className="heading"
             />
+            </div>
             <Input
               onChange={changeRole}
               text={credential.role}
@@ -92,10 +100,6 @@ export default function Credential({ title, credentialItem }) {
           </>
         )}
       </section>
-      <Button
-        onClick={changeWriting}
-        icon={writing ? icons.save : icons.edit}
-      ></Button>
     </article>
   );
 }

@@ -42,8 +42,14 @@ export default function Projects() {
 
   return (
     <article>
-      <section className="content">
+      <section className="heading">
         <h2>Projects</h2>
+        <Button
+        onClick={changeWriting}
+        icon={writing ? icons.save : icons.edit}
+      ></Button>
+      </section>
+      <section className="content">
         {!writing ? (
           <>
             <ul>
@@ -59,10 +65,7 @@ export default function Projects() {
           </>
         )}
       </section>
-      <Button
-        onClick={changeWriting}
-        icon={writing ? icons.save : icons.edit}
-      ></Button>
+      
     </article>
   );
 }
