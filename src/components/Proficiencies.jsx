@@ -41,6 +41,10 @@ const proficiencyList = [
   {
     id: 8,
     detail: "",
+  },
+  {
+    id: 9,
+    detail: "",
   }
 ];
 
