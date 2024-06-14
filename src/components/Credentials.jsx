@@ -2,6 +2,7 @@ import Button from "./Button";
 import icons from "../icons";
 import { Input, InputList } from "./Inputs";
 import { useState } from "react";
+import '../styles/Credentials.css';
 
 export default function Credential({ title, credentialItem }) {
   const [writing, setWriting] = useState(false);
@@ -57,7 +58,10 @@ export default function Credential({ title, credentialItem }) {
       <section className="content">
         {!writing ? (
           <>
-            <p className="institution">{credential.institution} <span className="tenure">{credential.location} {credential.tenure}</span></p>
+            <div className="institution">
+              <p>{credential.institution}</p>
+              <p className="tenure">{credential.location} {credential.tenure}</p>
+            </div>
             <p className="role">{credential.role}</p>
             <ul>
               {credential.highlights.map((item) => {

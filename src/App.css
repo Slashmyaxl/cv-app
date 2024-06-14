@@ -8,9 +8,6 @@
   --navy-blue: hsl(224, 85%, 40%);
 }
 
-.content > * {
-  display: block;
-}
 
 h2 {
   text-transform: uppercase;
@@ -47,11 +44,6 @@ article > .content {
   margin: 0.25rem 0;
 }
 
-.content .tenure {
-  opacity: 0.65;
-  font-size: 1rem;
-}
-
 main article, main aside {
   margin: 0.65rem 0 1rem;
 }
@@ -85,37 +77,6 @@ main input.big {
 
 main input.heading {
   font-size: 1.2rem;
-}
-
-.institution {
-  font-size: 1.2rem;
-  width: 100%;
-  display: flex;
-  column-gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  text-decoration: underline;
-}
-
-.institutional-info {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  width: 95%;
-}
-
-.institutional-info input {
-  width: 100%;
-  text-align: right;
-  padding-left: 4px;
-}
-
-.institutional-info input:first-child {
-  text-align: left;
-}
-
-.institution > span {
-  font-weight: normal;
 }
 
 .role {
